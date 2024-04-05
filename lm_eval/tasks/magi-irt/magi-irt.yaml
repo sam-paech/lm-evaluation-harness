@@ -1,5 +1,5 @@
 task: magi
-dataset_path: sam-paech/magi_1_0
+dataset_path: sam-paech/magi_irt_1_0
 dataset_name: null
 output_type: multiple_choice
 training_split: null

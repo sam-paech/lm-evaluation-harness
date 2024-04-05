@@ -11,5 +11,4 @@ def process_results_mcqa(doc, results):
 
 	return {
 		"acc": acc,
-		"acc_norm": acc_norm,
 	}
