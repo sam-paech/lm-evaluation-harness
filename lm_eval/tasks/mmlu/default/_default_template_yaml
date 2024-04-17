@@ -4,7 +4,7 @@ fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: multiple_choice
-doc_to_text: "Examples of the question format:\n[Question Text]\nA. [Answer Option A]\nB. [Answer Option B]\nC. [Answer Option C]\nD. [Answer Option D]\nAnswer: [Letter of Correct Answer A,B,C or D]\n\n[Another Question Text]\nA. [Another Answer Option A]\nB. [Another Answer Option B]\nC. [Another Answer Option C]\nD. [Another Answer Option D]\nAnswer: [Another Letter of Correct Answer A,B,C or D]\n\n[Yet Another Question Text]\nA. [Yet Another Answer Option A]\nB. [Yet Another Answer Option B]\nC. [Yet Another Answer Option C]\nD. [Yet Another Answer Option D]\nAnswer: [Yet Another Letter of Correct Answer A,B,C or D]\n\n[A Fourth Question Text]\nA. [A Fourth Answer Option A]\nB. [A Fourth Answer Option B] \nC. [A Fourth Answer Option C]\nD. [A Fourth Answer Option D]\nAnswer: [Letter of Correct Answer A,B,C or D]\n\n[A Fifth and Final Question Text]\nA. [A Fifth and Final Answer Option A]\nB. [A Fifth and Final Answer Option B]\nC. [A Fifth and Final Answer Option C]\nD. [A Fifth and Final Answer Option D]\nAnswer: [Letter of Correct Answer A,B,C or D]\n\nNow answer this question:\n\n{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nAnswer:"
+doc_to_text: "Example of the question format:\n[Question Text]\nA. [Answer Option A]\nB. [Answer Option B]\nC. [Answer Option C]\nD. [Answer Option D]\nAnswer: [Letter of Correct Answer A,B,C or D]\n\nNow answer this question:\n\n{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nAnswer:"
 doc_to_choice: ["A", "B", "C", "D"]
 doc_to_target: answer
 metric_list:
