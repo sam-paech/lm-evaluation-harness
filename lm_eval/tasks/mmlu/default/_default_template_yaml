@@ -7,10 +7,10 @@ output_type: multiple_choice
 doc_to_text: |
   {% if subject == "moral_scenarios" %}
   {{question.strip()}}
-  A. {% if choices[0].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[0].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
-  B. {% if choices[1].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[1].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
-  C. {% if choices[2].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[2].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
-  D. {% if choices[3].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[3].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
+  A. Scenario 1: Morally wrong. Scenario 2: Morally wrong.
+  B. Scenario 1: Morally wrong. Scenario 2: Morally not wrong.
+  C. Scenario 1: Morally not wrong. Scenario 2: Morally wrong.
+  D. Scenario 1: Morally not wrong. Scenario 2: Morally not wrong.
   Answer:
   {% else %}
   {{question.strip()}}
