@@ -1,10 +1,25 @@
-dataset_path: hails/mmlu_no_train # a copy of `cais/mmlu` with no auxiliary_train split
+dataset_path: hails/mmlu_no_train
 test_split: test
 fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: multiple_choice
-doc_to_text: "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nAnswer:"
+doc_to_text: |
+  {% if subject == "moral_scenarios" %}
+  {{question.strip()}}
+  A. {% if choices[0].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[0].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
+  B. {% if choices[1].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[1].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
+  C. {% if choices[2].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[2].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
+  D. {% if choices[3].split(", ")[0] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}, {% if choices[3].split(", ")[1] == "Wrong" %}Morally Impermissible{% else %}Morally Permissible{% endif %}
+  Answer:
+  {% else %}
+  {{question.strip()}}
+  A. {{choices[0]}}
+  B. {{choices[1]}}
+  C. {{choices[2]}}
+  D. {{choices[3]}}
+  Answer:
+  {% endif %}
 doc_to_choice: ["A", "B", "C", "D"]
 doc_to_target: answer
 metric_list:
