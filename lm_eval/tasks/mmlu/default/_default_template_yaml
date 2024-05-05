@@ -1,25 +1,10 @@
-dataset_path: hails/mmlu_no_train
+dataset_path: hails/mmlu_no_train # a copy of `cais/mmlu` with no auxiliary_train split
 test_split: test
 fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: multiple_choice
-doc_to_text: |
-  {% if subject == "moral_scenarios" %}
-  {{question.strip()}}
-  A. Scenario 1: Morally wrong. Scenario 2: Morally wrong.
-  B. Scenario 1: Morally wrong. Scenario 2: Morally not wrong.
-  C. Scenario 1: Morally not wrong. Scenario 2: Morally wrong.
-  D. Scenario 1: Morally not wrong. Scenario 2: Morally not wrong.
-  Answer:
-  {% else %}
-  {{question.strip()}}
-  A. {{choices[0]}}
-  B. {{choices[1]}}
-  C. {{choices[2]}}
-  D. {{choices[3]}}
-  Answer:
-  {% endif %}
+doc_to_text: "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nAnswer:"
 doc_to_choice: ["A", "B", "C", "D"]
 doc_to_target: answer
 metric_list:
