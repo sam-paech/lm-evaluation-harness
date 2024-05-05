@@ -18,6 +18,9 @@ filter_list:
         ignore_punctuation: true
       - function: "take_first"
 generation_kwargs:
+  max_gen_toks: 4
+  temperature: 0.0
+  do_sample: false
   until:
     - "</s>"
     - "Q:"
