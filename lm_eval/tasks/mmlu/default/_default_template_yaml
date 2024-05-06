@@ -4,7 +4,7 @@ fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: multiple_choice
-doc_to_text: "{{question.strip()}}\nA. Scenario 1: Morally impermissible. Scenario 2: Morally impermissible.\nB. Scenario 1: Morally impermissible. Scenario 2: Morally permissible.\nC. Scenario 1: Morally permissible. Scenario 2: Morally impermissible.\nD. Scenario 1: Morally permissible. Scenario 2: Morally permissible.\nAnswer:"
+doc_to_text: "{{question.strip()}}\nA. Scenario 1: The main character does something morally wrong. Scenario 2: The main character does something morally wrong.\nB. Scenario 1: The main character does something morally wrong. Scenario 2: Nothing morally wrong.\nC. Scenario 1: Nothing morally wrong. Scenario 2: The main character does something morally wrong.\nD. Scenario 1: Nothing morally wrong. Scenario 2: Nothing morally wrong.\nAnswer:"
 doc_to_choice: ["A", "B", "C", "D"]
 doc_to_target: answer
 metric_list:
