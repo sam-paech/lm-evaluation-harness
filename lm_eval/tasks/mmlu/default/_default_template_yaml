@@ -4,8 +4,8 @@ fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: multiple_choice
-doc_to_text: "{{question.strip()}}\nA. {{choices[1]}}\nB. {{choices[0]}}\nC. {{choices[3]}}\nD. {{choices[2]}}\nAnswer:"
-doc_to_choice: ["B", "A", "D", "C"]
+doc_to_text: "{{question.strip()}}\nA. Scenario 1: Morally wrong. Scenario 2: Morally wrong.\nB. Scenario 1: Morally wrong. Scenario 2: Not morally wrong.\nC. Scenario 1: Not morally wrong. Scenario 2: Morally wrong.\nD. Scenario 1: Not morally wrong. Scenario 2: Not morally wrong.\nAnswer:"
+doc_to_choice: ["A", "B", "C", "D"]
 doc_to_target: answer
 metric_list:
   - metric: acc
