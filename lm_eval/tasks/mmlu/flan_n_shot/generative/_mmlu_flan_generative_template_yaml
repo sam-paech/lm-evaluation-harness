@@ -13,7 +13,7 @@ filter_list:
     filter:
       - function: !function utils.MultiChoiceRegexFilter
         group_select: 0
-        regex_pattern: "\\s*(\\(\\[A-Z\\]\\))"
+        regex_pattern: "(\\([A-Z]\\))"
         ignore_case: true
         ignore_punctuation: true
       - function: "take_first"

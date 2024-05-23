@@ -38,6 +38,7 @@ class MultiChoiceRegexFilter(RegexFilter):
         # independently (and keep them a list.)
 
         def find_match(regex, resp, convert_dict={}):
+            resp = resp.strip()
             match = regex.findall(resp)
             if match:
                 match = match[self.group_select]
