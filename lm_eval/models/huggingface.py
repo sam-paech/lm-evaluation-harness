@@ -709,9 +709,14 @@ class HFLM(TemplateLM):
             )
             batch_size = min(gathered)
             clear_torch_cache()
+            # often get OOM with the auto batch size, so just return half of what it thinks
+            if batch_size > 1:
+                batch_size = int(round(batch_size/2))
             return batch_size
 
         clear_torch_cache()
+        if batch_size > 1:
+            batch_size = int(round(batch_size/2))
         return batch_size
 
     def tok_encode(
