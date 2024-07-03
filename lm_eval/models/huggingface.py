@@ -690,7 +690,8 @@ class HFLM(TemplateLM):
                 ).long()
             for _ in range(5):
                 out = F.log_softmax(self._model_call(test_batch, **call_kwargs), dim=-1)  # noqa: F841
-
+            if batch_size > 1:
+                batch_size = int(round(batch_size/2))
             return batch_size
 
         try:
